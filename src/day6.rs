@@ -1,13 +1,13 @@
 use std::collections::HashSet;
-use crate::read_input;
+use crate::get_result;
 
 // https://www.reddit.com/r/rust/comments/k7nq0h/advent_of_code_2020_day_6/
 
 const INPUT_FILENAME: &str = "inputs/input6";
 
 pub fn solve() {
-    println!("Part 1: {}", part01(read_input(INPUT_FILENAME)));
-    println!("Part 2: {}", part02(read_input(INPUT_FILENAME)));
+    get_result(1, part01, INPUT_FILENAME);
+    get_result(2, part02, INPUT_FILENAME);
 }
 
 fn part01(input: String) -> usize {
