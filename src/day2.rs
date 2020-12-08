@@ -1,25 +1,25 @@
 use parse_display::{Display as PDisplay, FromStr as PFromStr};
-use std::fs::read_to_string;
+use crate::read_input;
 
 // https://www.reddit.com/r/rust/comments/k554uk/advent_of_code_2020_day_2/
 
 const INPUT_FILENAME: &str = "inputs/input2";
 
 pub fn solve() {
-    println!("Part 1: {}", part01(INPUT_FILENAME));
-    println!("Part 2: {}", part02(INPUT_FILENAME));
+    println!("Part 1: {}", part01(read_input(INPUT_FILENAME)));
+    println!("Part 2: {}", part02(read_input(INPUT_FILENAME)));
 }
 
-fn part01(file_name: &str) -> usize {
-    read_to_string(file_name).unwrap().lines()
+fn part01(input: String) -> usize {
+    input.lines()
         .map(|line| line.parse::<Entry>().unwrap())
         .filter(|e| is_valid_part_1(e))
         .count()
 }
 
 
-fn part02(file_name: &str) -> usize {
-    read_to_string(file_name).unwrap().lines()
+fn part02(input: String) -> usize {
+    input.lines()
         .map(|line| line.parse::<Entry>().unwrap())
         .filter(|e| is_valid_part_2(e))
         .count()

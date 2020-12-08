@@ -1,5 +1,5 @@
-use std::fs::read_to_string;
 use regex::Regex;
+use crate::read_input;
 
 
 // https://www.reddit.com/r/rust/comments/k6fgrs/advent_of_code_2020_day_4/
@@ -7,14 +7,14 @@ use regex::Regex;
 const INPUT_FILENAME: &str = "inputs/input4";
 
 pub fn solve() {
-    println!("Part 1: {}", solution(INPUT_FILENAME, Validator::PartOne));
-    println!("Part 2: {}", solution(INPUT_FILENAME, Validator::PartTwo));
+    println!("Part 1: {}", solution(read_input(INPUT_FILENAME), Validator::PartOne));
+    println!("Part 2: {}", solution(read_input(INPUT_FILENAME), Validator::PartTwo));
 }
 
-fn solution(file_name: &str, validator: Validator) -> usize {
+fn solution(input: String, validator: Validator) -> usize {
     let mut result = 0;
     let mut passport = Passport::new();
-    for line in read_to_string(file_name).unwrap().lines() {
+    for line in input.lines() {
         for entry in line.split_ascii_whitespace() {
             let mut split = entry.split(':');
             let token = split.next().unwrap();

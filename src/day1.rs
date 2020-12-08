@@ -1,5 +1,5 @@
 use std::collections::HashSet;
-use std::fs::read_to_string;
+use crate::read_input;
 
 // https://www.reddit.com/r/rust/comments/k4hoyk/advent_of_code_2020_day_1/
 
@@ -7,13 +7,12 @@ const SUM_OBJECTIVE: i32 = 2020;
 const INPUT_FILENAME: &str = "inputs/input1";
 
 pub fn solve() {
-    println!("Part 1: {}", part01(INPUT_FILENAME));
-    println!("Part 2: {}", part02(INPUT_FILENAME));
+    println!("Part 1: {}", part01(read_input(INPUT_FILENAME)));
+    println!("Part 2: {}", part02(read_input(INPUT_FILENAME)));
 }
 
-fn part01(file_name: &str) -> i32 {
-    let entries: HashSet<i32> = read_to_string(file_name).unwrap()
-        .lines()
+fn part01(input: String) -> i32 {
+    let entries: HashSet<i32> = input.lines()
         .map(|x| x.parse::<i32>().unwrap())
         .collect();
 
@@ -28,9 +27,8 @@ fn part01(file_name: &str) -> i32 {
 }
 
 
-fn part02(file_name: &str) -> i32 {
-    let mut entries: Vec<i32> = read_to_string(file_name).unwrap()
-        .lines()
+fn part02(input: String) -> i32 {
+    let mut entries: Vec<i32> = input.lines()
         .map(|x| x.parse::<i32>().unwrap())
         .collect();
 
