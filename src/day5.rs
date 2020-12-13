@@ -1,5 +1,6 @@
 use crate::get_result;
 
+// https://adventofcode.com/2020/day/5
 // https://www.reddit.com/r/rust/comments/k71r9n/advent_of_code_2020_day_5/
 
 const INPUT_FILENAME: &str = "inputs/input5";

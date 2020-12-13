@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use crate::get_result;
 
+// https://adventofcode.com/2020/day/3
 // https://www.reddit.com/r/rust/comments/k5s4k9/advent_of_code_2020_day_3/
 
 const INPUT_FILENAME: &str = "inputs/input3";

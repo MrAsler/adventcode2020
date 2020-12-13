@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![feature(iterator_fold_self)]
+#![feature(str_split_once)]
 
 #[macro_use]
 extern crate lazy_static;
@@ -15,9 +16,15 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
+mod day10;
+mod day11;
+mod day12;
+mod day13;
+
 
 fn main() {
-    day8::solve();
+    day10::solve();
 }
 
 pub fn read_input(file_name: &str) -> String {
@@ -34,6 +41,14 @@ pub fn get_result<F>(part: u8, func: F, file_name: &str)
 
 pub fn get_result_i32<F>(part: u8, func: F, file_name: &str)
     where F: Fn(String) -> i32 {
+    let start = SystemTime::now();
+    let result = func(read_input(file_name));
+    let duration = SystemTime::now().duration_since(start).unwrap();
+    println!("Part {}: {} (time: {:?})", part, result, duration);
+}
+
+pub fn get_result_i64<F>(part: u8, func: F, file_name: &str)
+    where F: Fn(String) -> i64 {
     let start = SystemTime::now();
     let result = func(read_input(file_name));
     let duration = SystemTime::now().duration_since(start).unwrap();

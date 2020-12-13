@@ -1,6 +1,7 @@
 use std::collections::HashSet;
 use crate::get_result_i32;
 
+// https://adventofcode.com/2020/day/1
 // https://www.reddit.com/r/rust/comments/k4hoyk/advent_of_code_2020_day_1/
 
 const SUM_OBJECTIVE: i32 = 2020;

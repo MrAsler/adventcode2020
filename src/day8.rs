@@ -2,6 +2,7 @@ use parse_display::{Display as PDisplay, FromStr as PFromStr};
 use crate::get_result_i32;
 use std::collections::HashSet;
 
+// https://adventofcode.com/2020/day/8
 // https://www.reddit.com/r/rust/comments/k90t1l/advent_of_code_2020_day_8/
 
 const INPUT_FILENAME: &str = "inputs/input8";
