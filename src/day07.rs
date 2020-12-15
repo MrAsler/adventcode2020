@@ -4,7 +4,7 @@ use crate::get_result;
 // https://adventofcode.com/2020/day/7
 // https://www.reddit.com/r/rust/comments/k8ador/advent_of_code_2020_day_7/
 
-const INPUT_FILENAME: &str = "inputs/input7";
+const INPUT_FILENAME: &str = "inputs/input07";
 const TARGET: &str = "shiny gold";
 
 pub fn solve() {

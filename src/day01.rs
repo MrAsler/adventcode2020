@@ -5,7 +5,7 @@ use crate::get_result_i32;
 // https://www.reddit.com/r/rust/comments/k4hoyk/advent_of_code_2020_day_1/
 
 const SUM_OBJECTIVE: i32 = 2020;
-const INPUT_FILENAME: &str = "inputs/input1";
+const INPUT_FILENAME: &str = "inputs/input01";
 
 pub fn solve() {
     get_result_i32(1, part01, INPUT_FILENAME);

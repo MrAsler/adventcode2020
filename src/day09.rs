@@ -4,7 +4,7 @@ use crate::get_result_i64;
 // https://www.reddit.com/r/rust/comments/k9m4ml/advent_of_code_2020_day_9/
 // Array windows makes this pretty fun (is currently unstable)
 
-const INPUT_FILENAME: &str = "inputs/input9";
+const INPUT_FILENAME: &str = "inputs/input09";
 
 pub fn solve() {
     get_result_i64(1, part01, INPUT_FILENAME);

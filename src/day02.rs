@@ -4,7 +4,7 @@ use crate::get_result;
 // https://adventofcode.com/2020/day/2
 // https://www.reddit.com/r/rust/comments/k554uk/advent_of_code_2020_day_2/
 
-const INPUT_FILENAME: &str = "inputs/input2";
+const INPUT_FILENAME: &str = "inputs/input02";
 
 pub fn solve() {
     get_result(1, part01, INPUT_FILENAME);

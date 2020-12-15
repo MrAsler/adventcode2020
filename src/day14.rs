@@ -61,10 +61,13 @@ fn recursive(floating_bits: &[usize], memory: &mut HashMap<i64, i64>, memory_add
     if floating_bits.is_empty() {
         return;
     }
-
     memory.insert(memory_address, value);
     recursive(&floating_bits[1..], memory, memory_address, value);
     let new_address = memory_address ^ (1 << floating_bits[0]);
     memory.insert(new_address, value);
     recursive(&floating_bits[1..], memory, new_address, value);
+}
+
+fn shift_bit(memory_address: i64, idx: usize) -> i64 {
+    memory_address ^ (1 << idx)
 }
