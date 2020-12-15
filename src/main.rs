@@ -22,14 +22,23 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 
 
 fn main() {
-    day14::solve();
+    day15::solve();
 }
 
 pub fn read_input(file_name: &str) -> String {
     read_to_string(file_name).unwrap()
+}
+
+pub fn get_result_no_input<F>(part: u8, func: F)
+    where F: Fn() -> usize {
+    let start = SystemTime::now();
+    let result = func();
+    let duration = SystemTime::now().duration_since(start).unwrap();
+    println!("Part {}: {} (time: {:?})", part, result, duration);
 }
 
 pub fn get_result<F>(part: u8, func: F, file_name: &str)

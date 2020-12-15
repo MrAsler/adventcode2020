@@ -45,7 +45,7 @@ fn part02(input: String) -> i64 {
         if line.starts_with("mask") {
             let bitmask_str = &line[line.find("= ").unwrap() + 2..];
             bitmask = i64::from_str_radix(&bitmask_str.replace('X', "0"), 2).unwrap();
-            floating_bits = bitmask_str.char_indices().filter(|(idx, char)| *char == 'X').map(|(idx, _)| 35 - idx).collect();
+            floating_bits = bitmask_str.char_indices().filter(|(_, char)| *char == 'X').map(|(idx, _)| 35 - idx).collect();
         } else {
             let mut memory_address = *&line[line.find('[').unwrap() + 1..line.find(']').unwrap()].parse::<i64>().unwrap();
             let value = *&line[line.find("= ").unwrap() + 2..].parse::<i64>().unwrap();
